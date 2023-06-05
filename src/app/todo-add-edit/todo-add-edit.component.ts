@@ -54,7 +54,7 @@ export class TodoAddEditComponent implements OnInit{
       } else {
         this._todoService.addTask(this.todoForm.value).subscribe({
           next: (val: any) => {
-            this._coreService.openSnackBar('Employee added successfully');
+            this._coreService.openSnackBar('Task added successfully');
             this._dialogRef.close(true);
           },
           error: (err: any) => {

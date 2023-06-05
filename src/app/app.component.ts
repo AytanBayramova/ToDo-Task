@@ -13,7 +13,7 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class AppComponent implements OnInit{
   displayedColumns: string[] = [
-    'id',
+   
     'todo',
      'whattimeisit',
      'action'

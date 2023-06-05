@@ -16,10 +16,21 @@
   "profile": {
     "name": "typicode"
   },
-  "todo":[
-   
-  
+  "todo": [
+    {
+      "id": "",
+      "todo": "",
+      "whattimeisit": ""
+    },
+    {
+      "todo": "gotoxd",
+      "whattimeisit": "12:22",
+      "id": "RC1YUrM"
+    },
+    {
+      "todo": "aj,h",
+      "whattimeisit": "03:01",
+      "id": "a2DzzrC"
+    }
   ]
-  
-  
 }
