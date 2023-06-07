@@ -1,9 +1,7 @@
 <mat-toolbar color="primary">
   <span>Todo App</span>
   <span class="example-spacer"></span>
-  <button mat-raised-button (click)="openAddEditTodoForm()">
-    Add Task
-  </button>
+  
 </mat-toolbar>
 
 <div class="main-body">
@@ -38,6 +36,18 @@
           </button>
         </td>
       </ng-container>
+
+      <ng-container matColumnDef="addtask">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header><button color="primary" mat-raised-button (click)="openAddEditTodoForm()">
+          Add Task
+        </button> </th>
+          <td mat-cell *matCellDef="let row">
+            
+          </td>
+       
+
+      
+    </ng-container>
   
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
@@ -47,8 +57,11 @@
         <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
       </tr>
     </table>
-  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+
   </div>
 </div>
+
+<ng-confirm></ng-confirm>
 
 

@@ -18,13 +18,17 @@ import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {NgConfirmModule} from 'ng-confirm-box';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoAddEditComponent
+    TodoAddEditComponent,
+    ConfirmDialogComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    NgConfirmModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
