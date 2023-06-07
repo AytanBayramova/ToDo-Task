@@ -6,6 +6,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import { CoreService } from './core/core.service';
 import {MatTableDataSource} from '@angular/material/table';
+import { NgConfirmService } from 'ng-confirm-box';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,7 +17,8 @@ export class AppComponent implements OnInit{
    
     'todo',
      'whattimeisit',
-     'action'
+     'action',
+     'addtask'
     ];
   dataSource!: MatTableDataSource<any>;
 
@@ -28,7 +30,8 @@ export class AppComponent implements OnInit{
   constructor( 
     private _dialog: MatDialog, 
     private _todoService:TodoService,
-    private _coreService: CoreService
+    private _coreService: CoreService,
+    private confirmService: NgConfirmService
 
     ){}
 
@@ -69,14 +72,23 @@ export class AppComponent implements OnInit{
 
 
   deleteTask (id:number){
-    this._todoService.deleteTask(id).subscribe({
-      next: (res) => {
-        this._coreService.openSnackBar('Task deleted!', 'done');
-        this.getTodoList();
-      },
-      error: console.log
+this.confirmService.showConfirm("Are you sure want to delete?",
+()=>{
+  this._todoService.deleteTask(id).subscribe(res=>{
+ 
+      this._coreService.openSnackBar('Task deleted!', 'done');
+      this.getTodoList();
     })
+},
+()=>{
+alert("done")
+
+}
+)
   }
+
+   
+  
 
   openEditTodoForm(data:any){
    const dialogRef= this._dialog.open(TodoAddEditComponent, {
