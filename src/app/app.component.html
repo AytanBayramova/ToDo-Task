@@ -15,7 +15,6 @@
   <div class="table-container">
     <table mat-table [dataSource]="dataSource" matSort>
   
-  
       <!-- Progress Column -->
       <ng-container matColumnDef="todo">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> To do tasks</th>
@@ -47,7 +46,6 @@
         <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
       </tr>
     </table>
-  
   </div>
 </div>
 
